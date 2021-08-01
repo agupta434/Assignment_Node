@@ -1,0 +1,68 @@
+extends layout
+
+block content
+  
+  // code starts
+  nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+    .container-fluid
+      a  class=&quot;
+      img(src='/images/1.png' alt='logo' style='width:60px')
+      a.navbar-brand(href='#') Travel Expert Inc.
+      button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item.active
+            a.nav-link(href='/')
+              | Home 
+              span.sr-only (current)
+          li.nav-item
+            a.nav-link(href='registration') Registration
+          li.nav-item.dropdown
+            a#navbarDropdown.nav-link.dropdown-toggle(href='services' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+              | Services
+            .dropdown-menu(aria-labelledby='navbarDropdown')
+              a.dropdown-item(href='services') Flights
+              a.dropdown-item(href='services') Hotels
+              a.dropdown-item(href='services') Car Rentals
+          li.nav-item
+            a.nav-link(href='contact') Contact
+          form.form-inline.my-2.my-lg-0
+            input.form-control.mr-sm-2(type='search' placeholder='Search' aria-label='Search')
+          button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+  .alert.alert-success(role='alert')
+    .container-fluid
+      h6
+        span
+          strong Christmas Offer!  Hurry Up!
+            button.close(type='button' data-dismiss='alert' aria-label='Close')
+              span(aria-hidden='true') &times;
+  .container-fluid.mt-4
+    // <h2 style="color:rgb(255, 0, 0);">
+    h2.text-center #{usern}
+    h2.text-center(style='color:hsl(0, 100%, 50%);')  
+      strong
+        | Welcome to Travel Expert Inc.
+    h5.text-center= dt
+    h2.text-center.text-black #{greetings}
+    .d-inline-flex.p-2.bg-secondary.text-white
+      .p-2.bg-info Flights
+      .p-2.bg-warning Hotels
+      .p-2.bg-primary Car Rentals
+  .row
+    .col-md-4
+      .thumbnail
+        a(href='/images/coastal-family-health-travel-clinic.jpg')
+          img(src='/images/coastal-family-health-travel-clinic.jpg' alt='Lights' style='width:100%')
+          .caption
+    .col-md-4
+      .thumbnail
+        a(href='/images/Guadalajara, Mexico.jpg')
+          img(src='/images/Guadalajara, Mexico.jpg' alt='Nature' style='width:100%')
+          .caption
+    .col-md-4
+      .thumbnail
+        a(href='/images/Bilbao, Spain.jpg')
+          img(src='/images/Bilbao, Spain.jpg' alt='Fjords' style='width:100%')
+          .caption
+

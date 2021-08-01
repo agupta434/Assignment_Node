@@ -1,0 +1,68 @@
+extends layout
+
+block content
+  nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+    .container-fluid
+      a  class=&quot;
+      img(src='/images/1.png' alt='logo' style='width:60px')
+      a.navbar-brand(href='#') Travel Expert Inc.
+      button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item
+            a.nav-link(href='/') Home
+          li.nav-item
+            a.nav-link(href='registration') Registration
+          li.nav-item.dropdown
+            a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+              | Services
+            .dropdown-menu(aria-labelledby='navbarDropdown')
+              a.dropdown-item(href='services') Flights
+              a.dropdown-item(href='services') Hotels
+              a.dropdown-item(href='services') Car Rentals
+          li.nav-item.active
+            a.nav-link(href='contact')
+              | Contact
+              span.sr-only (current)
+          form.form-inline.my-2.my-lg-0
+            input.form-control.mr-sm-2(type='search' placeholder='Search' aria-label='Search')
+        button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+  .container.mt-4
+    h3 Contact Us for any Query
+    form.row.g-3(method='POST' action='/contact/create')
+      .col-md-4
+        label.form-label(for='inputfirstname') First name
+        input#inputfirstname.form-control(type='text' value='' required='' name='firstname')
+      .col-md-4
+        label.form-label(for='inputlastname') Last name
+        input#inputlastname.form-control(type='text' value='' required='' name='lastname')
+      .col-md-4
+        label.form-label(for='inputemail') Email
+        .input-group
+          // <span class="input-group-text" id="inputGroupPrepend2">@</span>
+          input#inputemail.form-control(type='text' required='' name='email')
+      .col-md-4
+        label.form-label(for='inputcity') City
+        input#inputcity.form-control(type='text' required='' name='city')
+      .col-md-4
+        label.form-label(for='inputprovince') Province
+        input#inputprovince.form-control(type='text' required='' name='province')
+      .col-md-4
+        label.form-label(for='inputpostalcode') Postal Code
+        input#inputpostalcode.form-control(type='text' required='' name='postalcode')
+      //- .col-12
+      //-   .form-check
+      //-     input#invalidCheck2.form-check-input(type='checkbox' value='' required='')
+      //-     label.form-check-label(for='invalidCheck2')
+      //-       | Agree to terms and conditions
+      .col-12
+        button.btn.btn-primary(type='submit') Submit form
+
+
+        if errors
+          ul
+            each error in errors
+              li.alert.alert-danger.m3= error
+
+

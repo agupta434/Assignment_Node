@@ -1,0 +1,64 @@
+extends layout
+
+block content
+  nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+    .container-fluid
+      a  class=&quot;
+      img(src='/images/1.png' alt='logo' style='width:60px')
+      a.navbar-brand(href='#') Travel Expert Inc.
+      button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item
+            a.nav-link(href='/') Home 
+          li.nav-item.active
+            a.nav-link(href='registration')
+              | Registration
+              span.sr-only (current)
+          li.nav-item.dropdown
+            a#navbarDropdown.nav-link.dropdown-toggle(href='/' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+              | Services
+            .dropdown-menu(aria-labelledby='navbarDropdown')
+              a.dropdown-item(href='services') Flights
+              a.dropdown-item(href='services') Hotels
+              a.dropdown-item(href='services') Car Rentals
+          li.nav-item
+            a.nav-link(href='contact') Contact
+          form.form-inline.my-2.my-lg-0
+            input.form-control.mr-sm-2(type='search' placeholder='Search' aria-label='Search')
+          button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+  .container-fluid
+    h2 Registration
+    form(aciton='/bouncer.php' name='myForm' onsubmit='return validateForm()' method='post')
+      #name.formdesign
+        //- | Name: 
+        input(type='text' name='fname' required='' placeholder='Name')
+        b
+          span.formerror  
+      #email.formdesign
+        //- | Email: 
+        input(type='email' name='femail' required='' placeholder='E-mail')
+        b
+          span.formerror  
+      #phone.formdesign
+        //- | Phone: 
+        input(type='phone' name='fphone' required='' placeholder='Phone')
+        b
+          span.formerror
+      #pass.formdesign
+        //- | Password: 
+        input(type='password' name='fpass' required='' placeholder='Password')
+        b
+          span.formerror
+      #cpass.formdesign
+        //- | Confirm Password: 
+        input(type='password' name='fcpass' required='' placeholder='Confirm Password')
+        b
+          span.formerror
+      input.but(type='submit' value='Submit')
+  script(src='index.js')
+
+
+
+
