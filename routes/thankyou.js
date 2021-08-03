@@ -4,7 +4,7 @@ var router = express.Router();
 
 /* GET thank you page. */
 router.get('/', function (req, res, next) {
-  res.render('thankyou', { title: "Welcome to Travel Experts" });
+  res.render('thankyou', { title: "" });
 });
 
 module.exports = router;
