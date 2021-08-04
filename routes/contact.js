@@ -40,7 +40,7 @@ router.post('/create', function (req, res, next) {
             });
         }
         // res.redirect("/thankyou");
-        res.render("thankyou");
+        res.redirect("/thankyou");
     })
 
 });
